@@ -1,35 +1,14 @@
-/*
-file manager funtionalities
-
-1> Homepage 
-when a user visits root route , he/she can see basic html page and they can access various
-file management things using routes /create , /read,  /delete.
-
-
-2> /create
-
-when visited /create then it creates a sample file named sample.txt with some 
-sample content using fs.writeFile method
-
-3> /read
-
-when visited /read then it reads file named sample.txt with some 
-sample content using fs.readFile method and returns it as a plain text
-
-4> /delete
-
-when visited ,it deletes the file named sample.txt if exits using fs.unlink
-
-
-NOTE: this application doesn't use any extenal liberaries and just uses core modules(http,path,fs)
-      to build a lightweight yet functional file manager
-
-
-
-#### HOW TO RUN  ####
-
-firstly install nodemon globally by using command npm install nodemon -g  (helps in automatic restarting the server when anything changes)
-
-then run command ------>>>>    "npm run dev"
-
-*/
+Why Use Promises Instead of Callbacks?
+Avoid Callback Hell – Promises allow chaining with .then() instead of deeply nested callbacks, making code flatter and more readable.
+Better Error Handling – A single .catch() can handle errors for an entire chain, rather than checking errors at each callback level.
+Sequential Logic – Promises make it easier to manage asynchronous operations in a clear, sequential order.
+Modern JavaScript – Promises are the foundation for async/await, enabling synchronous-style async code.
+// Callbacks (nested)          // Async/Await (flat)  
+A(a => {                    try {  
+  B(b => {                    const a = await A();  
+    C(c => {                  const b = await B(a);  
+      // ...                    const c = await C(b);  
+    });                         // ...  
+  });                         } catch (err) {  
+});                             console.error(err);  
+                              }  
